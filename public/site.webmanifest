@@ -1,0 +1,17 @@
+{
+  "name": "Satyam Katiyar - Full Stack Developer",
+  "short_name": "Satyam Portfolio",
+  "description": "Full Stack Developer specializing in React, Node.js, and modern web technologies",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
