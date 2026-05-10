@@ -64,7 +64,7 @@ export const PROJECTS_DATA = [
             "Role-based Team Administration"
         ],
         tags: ["React", "Node.js", "MongoDB", "Socket.io"],
-        github: "https://github.com/Satyam-xD/Aurora-Workspace",
+        github: "https://github.com/Satyam-xD/Digital_Workspace",
         liveUrl: "https://aurora-digital-work-space.vercel.app/"
     },
     {
