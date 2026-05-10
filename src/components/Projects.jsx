@@ -1,6 +1,6 @@
 import { PROJECTS_DATA } from '../constants';
 import { motion } from 'framer-motion';
-import { FiGithub, FiExternalLink, FiCode } from 'react-icons/fi';
+import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import { Tilt } from 'react-tilt';
 
 const Projects = () => {
@@ -64,6 +64,17 @@ const Projects = () => {
                     >
                       <FiGithub size={20} />
                     </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-primary transition-colors"
+                        title="Live Demo"
+                      >
+                        <FiExternalLink size={20} />
+                      </a>
+                    )}
                   </div>
                 </div>
 

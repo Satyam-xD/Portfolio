@@ -1,6 +1,3 @@
-import { FiGithub, FiLinkedin, FiMail, FiMapPin } from 'react-icons/fi';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-
 export const PERSONAL_INFO = {
     name: "Satyam Katiyar",
     title: "Full Stack Developer",
@@ -67,7 +64,8 @@ export const PROJECTS_DATA = [
             "Role-based Team Administration"
         ],
         tags: ["React", "Node.js", "MongoDB", "Socket.io"],
-        github: "https://github.com/Satyam-xD/Aurora-Workspace"
+        github: "https://github.com/Satyam-xD/Aurora-Workspace",
+        liveUrl: "https://aurora-digital-work-space.vercel.app/"
     },
     {
         title: "Jobly",
@@ -95,7 +93,8 @@ export const PROJECTS_DATA = [
             "Interactive Project Showcase"
         ],
         tags: ["React", "Framer Motion", "Tailwind CSS"],
-        github: "https://github.com/Satyam-xD/Portfolio"
+        github: "https://github.com/Satyam-xD/Portfolio",
+        liveUrl: "https://satyam-xd.vercel.app/"
     }
 ];
 
