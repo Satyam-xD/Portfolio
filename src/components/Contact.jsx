@@ -1,4 +1,4 @@
-import { CONTACT_INFO, SOCIAL_LINKS, PERSONAL_INFO } from '../constants';
+import { CONTACT_INFO, SOCIAL_LINKS } from '../constants';
 import { motion } from 'framer-motion';
 import { FiMail, FiMapPin, FiSend, FiLinkedin, FiGithub } from 'react-icons/fi';
 import { useState } from 'react';
@@ -11,17 +11,30 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${PERSONAL_INFO.email}&su=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    window.open(gmailLink, '_blank');
+    setStatus('sending');
+    try {
+      const res = await fetch('https://formspree.io/f/mgodpzqv', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   const contactItems = CONTACT_INFO.map(item => ({
@@ -141,11 +154,22 @@ const Contact = () => {
                   <textarea name="message" value={formData.message} onChange={handleChange} className={`${inputClassName} min-h-[160px] resize-y`} placeholder="Tell me about your project..." required></textarea>
                 </div>
 
+                {status === 'success' && (
+                  <div className="p-4 rounded-xl bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 text-green-700 dark:text-green-300 font-medium text-center">
+                    ✅ Message sent! I'll get back to you soon.
+                  </div>
+                )}
+                {status === 'error' && (
+                  <div className="p-4 rounded-xl bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 text-red-700 dark:text-red-300 font-medium text-center">
+                    ❌ Something went wrong. Please try again.
+                  </div>
+                )}
                 <button
                   type="submit"
-                  className="w-full px-10 py-5 bg-gradient-to-r from-primary to-blue-600 text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3 text-lg"
+                  disabled={status === 'sending'}
+                  className="w-full px-10 py-5 bg-gradient-to-r from-primary to-blue-600 text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3 text-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  <span>Send Message</span>
+                  <span>{status === 'sending' ? 'Sending…' : 'Send Message'}</span>
                   <FiSend />
                 </button>
               </form>
