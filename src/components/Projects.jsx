@@ -1,21 +1,8 @@
 import { PROJECTS_DATA } from '../constants';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
-import { Tilt } from 'react-tilt';
 
 const Projects = () => {
-  const tiltOptions = {
-    reverse: false,
-    max: 15,
-    perspective: 1000,
-    scale: 1.02,
-    speed: 1000,
-    transition: true,
-    axis: null,
-    reset: true,
-    easing: "cubic-bezier(.03,.98,.52,.99)",
-  };
-
   return (
     <section id="projects" className="section-padding bg-surface relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 pointer-events-none" />
