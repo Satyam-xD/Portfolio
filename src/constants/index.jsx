@@ -5,7 +5,7 @@ export const PERSONAL_INFO = {
     location: "Bareilly, Uttar Pradesh, India",
     bio: "Full-stack developer specializing in modern web technologies. Currently focused on creating accessible, human-centered applications.",
     about: "Passionate Full Stack Developer fresh out of university with expertise in modern web technologies. I specialize in building responsive applications using React, Node.js, and MongoDB, with a strong foundation in computer science principles and problem-solving.",
-    resumeLink: "https://drive.google.com/file/d/1IFnVqy8rRg8GUUV2pkqHRq9tbaS9R1Td/view?usp=sharing"
+    resumeLink: "https://drive.google.com/file/d/1lLoeYpM6Oy_YUAFa_5nkOg5jbe6lVLMm/view?usp=sharing"
 };
 
 export const HERO_CONTENT = {
