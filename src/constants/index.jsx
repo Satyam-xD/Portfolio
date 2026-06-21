@@ -2,7 +2,7 @@ export const PERSONAL_INFO = {
     name: "Satyam Katiyar",
     title: "Full Stack Developer",
     email: "anshkatiyar019@gmail.com",
-    location: "Bareilly, Uttar Pradesh, India",
+    location: "Lakhimpur Kheri, UP, India",
     bio: "Full-stack developer specializing in modern web technologies. Currently focused on creating accessible, human-centered applications.",
     about: "Passionate Full Stack Developer fresh out of university with expertise in modern web technologies. I specialize in building responsive applications using React, Node.js, and MongoDB, with a strong foundation in computer science principles and problem-solving.",
     resumeLink: "https://drive.google.com/file/d/1lLoeYpM6Oy_YUAFa_5nkOg5jbe6lVLMm/view?usp=sharing"
@@ -25,9 +25,9 @@ export const ABOUT_CONTENT = {
     description: PERSONAL_INFO.about,
     education: [
         {
-            degree: "Bachelor's in Computer Science",
-            school: "Dr. A.P.J. Abdul Kalam Technical University, Lucknow",
-            year: "2022 - 2026"
+            degree: "B.Tech in Computer Science and Engineering",
+            school: "Shri Ram Murti Smarak College of Engineering and Technology, Bareilly",
+            year: "Sep. 2022 - May 2026"
         }
     ],
     notableProjects: [
@@ -43,12 +43,19 @@ export const SKILLS_DATA = [
     { name: 'JavaScript', level: 80, color: 'from-yellow-400 to-yellow-300' },
     { name: 'React', level: 75, color: 'from-cyan-500 to-cyan-400' },
     { name: 'Node.js', level: 70, color: 'from-green-600 to-green-500' },
+    { name: 'Express', level: 70, color: 'from-gray-600 to-gray-500' },
     { name: 'MongoDB', level: 65, color: 'from-emerald-500 to-emerald-400' },
-    { name: 'Tailwind CSS', level: 80, color: 'from-sky-500 to-sky-400' },
+    { name: 'MySQL', level: 70, color: 'from-blue-500 to-blue-400' },
     { name: 'Git', level: 75, color: 'from-orange-600 to-orange-500' },
+    { name: 'GitHub', level: 75, color: 'from-neutral-700 to-neutral-600' },
+    { name: 'VS Code', level: 85, color: 'from-blue-600 to-blue-500' },
     { name: 'Python', level: 60, color: 'from-blue-600 to-blue-500' },
-    { name: 'C++', level: 50, color: 'from-blue-800 to-blue-700' },
-    { name: 'SQL', level: 70, color: 'from-blue-400 to-blue-300' }
+    { name: 'Go', level: 60, color: 'from-cyan-500 to-blue-500' },
+    { name: 'LangChain', level: 75, color: 'from-green-500 to-green-400' },
+    { name: 'LangGraph', level: 70, color: 'from-teal-500 to-teal-400' },
+    { name: 'RAG', level: 75, color: 'from-purple-500 to-purple-400' },
+    { name: 'Guardrails', level: 65, color: 'from-red-500 to-red-400' },
+    { name: 'LLM Evaluation', level: 70, color: 'from-yellow-500 to-yellow-400' }
 ];
 
 export const PROJECTS_DATA = [
@@ -124,10 +131,35 @@ export const SOCIAL_LINKS = [
     }
 ];
 
+export const EXPERIENCE_DATA = [
+    {
+        role: "Artificial Intelligence Intern",
+        company: "Edunet Foundation in collaboration with Microsoft",
+        duration: "Apr. 2024",
+        description: [
+            "Gained hands-on experience with supervised and unsupervised machine learning algorithms using Python.",
+            "Built mini-projects utilizing scikit-learn, NumPy, and Pandas to preprocess data and train models."
+        ],
+        skills: ["Python", "Machine Learning", "scikit-learn", "NumPy", "Pandas"]
+    },
+    {
+        role: "Full Stack Development Intern",
+        company: "Techvision Technologies",
+        duration: "Sep. 2023",
+        description: [
+            "Contributed to the development of the Jobly job-portal project using the MERN stack.",
+            "Built responsive React frontend pages and integrated robust backend REST APIs using Node.js, Express, and MongoDB.",
+            "Implemented secure authentication protocols, employer job posting workflows, and interactive applicant dashboards."
+        ],
+        skills: ["React", "Node.js", "Express", "MongoDB", "Redux", "Tailwind CSS", "REST APIs"]
+    }
+];
+
 export const NAV_LINKS = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' }
 ];

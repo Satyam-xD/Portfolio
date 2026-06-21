@@ -7,6 +7,7 @@ import SplashScreen from './components/SplashScreen';
 
 const About = lazy(() => import('./components/About'));
 const Skills = lazy(() => import('./components/Skills'));
+const Experience = lazy(() => import('./components/Experience'));
 const Projects = lazy(() => import('./components/Projects'));
 const Contact = lazy(() => import('./components/Contact'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -33,6 +34,7 @@ function AppContent() {
         <Suspense fallback={<LoadingSpinner />}>
           <About />
           <Skills />
+          <Experience />
           <Projects />
           <Contact />
         </Suspense>

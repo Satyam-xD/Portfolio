@@ -1,7 +1,7 @@
 import { SKILLS_DATA } from '../constants';
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaDatabase, FaGitAlt, FaGithub, FaDocker } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiCplusplus, SiMysql, SiPostgresql } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaDatabase, FaGitAlt, FaGithub, FaLink, FaNetworkWired, FaSearch, FaShieldAlt, FaClipboardCheck } from 'react-icons/fa';
+import { SiMongodb, SiGo, SiMysql, SiExpress, SiVisualstudiocode } from 'react-icons/si';
 
 const getIcon = (name) => {
   switch (name) {
@@ -10,15 +10,19 @@ const getIcon = (name) => {
     case 'JavaScript': return <FaJs className="text-yellow-400" />;
     case 'React': return <FaReact className="text-cyan-400" />;
     case 'Node.js': return <FaNodeJs className="text-green-500" />;
+    case 'Express': return <SiExpress className="text-gray-400" />;
     case 'MongoDB': return <SiMongodb className="text-green-600" />;
-    case 'Tailwind': return <SiTailwindcss className="text-cyan-300" />;
-    case 'Github': return <FaGithub className="text-white" />;
-    case 'Git': return <FaGitAlt className="text-orange-600" />;
+    case 'MySQL': return <SiMysql className="text-blue-500" />;
     case 'Python': return <FaPython className="text-blue-400" />;
-    case 'C++': return <SiCplusplus className="text-blue-600" />;
-    case 'SQL': return <SiMysql className="text-blue-500" />;
-    case 'PostgreSQL': return <SiPostgresql className="text-blue-400" />;
-    case 'Docker': return <FaDocker className="text-blue-500" />;
+    case 'Go': return <SiGo className="text-cyan-500" />;
+    case 'Git': return <FaGitAlt className="text-orange-600" />;
+    case 'GitHub': return <FaGithub className="text-white" />;
+    case 'VS Code': return <SiVisualstudiocode className="text-blue-500" />;
+    case 'LangChain': return <FaLink className="text-green-400" />;
+    case 'LangGraph': return <FaNetworkWired className="text-teal-400" />;
+    case 'RAG': return <FaSearch className="text-purple-400" />;
+    case 'Guardrails': return <FaShieldAlt className="text-red-400" />;
+    case 'LLM Evaluation': return <FaClipboardCheck className="text-yellow-500" />;
     default: return <FaDatabase className="text-gray-400" />;
   }
 };
@@ -31,24 +35,24 @@ const Skills = () => {
 
   const categories = [
     {
-      title: "Frontend",
-      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind']
-    },
-    {
-      title: "Backend",
-      skills: ['Node.js']
-    },
-    {
-      title: "Databases",
-      skills: ['MongoDB', 'SQL']
-    },
-    {
       title: "Languages",
-      skills: ['JavaScript', 'Python', 'C++']
+      skills: ['Python', 'Go', 'JavaScript']
     },
     {
-      title: "Tools",
-      skills: ['Git', 'Github']
+      title: "Web Development",
+      skills: ['HTML', 'CSS', 'React', 'Node.js', 'Express']
+    },
+    {
+      title: "Agentic AI",
+      skills: ['LangChain', 'LangGraph', 'RAG', 'Guardrails', 'LLM Evaluation']
+    },
+    {
+      title: "Database",
+      skills: ['MySQL', 'MongoDB']
+    },
+    {
+      title: "Tools and Platforms",
+      skills: ['Git', 'GitHub', 'VS Code']
     }
   ];
 
@@ -69,7 +73,7 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {categories.map((category, catIndex) => (
             <motion.div
               key={catIndex}
@@ -79,16 +83,16 @@ const Skills = () => {
               viewport={{ once: true }}
               transition={{ delay: catIndex * 0.1 }}
             >
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span className="w-1 h-8 bg-gradient-to-b from-primary to-secondary rounded-full"></span>
+              <h3 className="text-2xl font-bold text-white mb-5 flex items-center gap-2.5">
+                <span className="w-1 h-7 bg-gradient-to-b from-primary to-secondary rounded-full"></span>
                 {category.title}
               </h3>
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-5">
                 {category.skills.map((skillName, skillIndex) => {
                   const iconKey = skillName === 'Tailwind' ? 'Tailwind' : skillName;
                   return (
-                    <div key={skillIndex} className="flex flex-col items-center gap-3 group cursor-default">
-                      <div className="text-4xl group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(112,77,242,0.5)] transition-all duration-300">
+                    <div key={skillIndex} className="flex flex-col items-center gap-2 group cursor-default">
+                      <div className="text-[32px] group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(112,77,242,0.5)] transition-all duration-300">
                         {getIcon(iconKey) || getIcon(skillName)}
                       </div>
                       <span className="text-sm text-gray-400 font-medium group-hover:text-primary transition-colors">{skillName}</span>
